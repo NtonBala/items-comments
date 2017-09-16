@@ -1,10 +1,9 @@
 import React from 'react';
-import './style.css';
+import {Router, browserHistory} from 'react-router';
+import routes from './routes';
 
 const App = () => (
-    <div className='test'>
-        <h1>Hello from Empeek Test Task App!</h1>
-    </div>
+    <Router history={browserHistory} routes={routes}/>
 );
 
 export default App;

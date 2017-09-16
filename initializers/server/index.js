@@ -8,6 +8,7 @@ const host = 'localhost',
 
 new webpackDevServer(webpak(config), {
     hot: true,
+    historyApiFallback: true,
     publicPath: config.output.publicPath,
     stats: {
         colors: true
