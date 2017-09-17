@@ -1,8 +1,12 @@
 import React from 'react';
+import Link from '../../../elements/Link';
+import {commentsPath} from '../../../../helpers/routes/index';
 
 const Item = ({comments, children}) => (
     <div>
-        {children}
+        <Link to={commentsPath('1')}>
+            {children}
+        </Link>
         <span>({comments})</span>
         <button>Delete</button>
     </div>

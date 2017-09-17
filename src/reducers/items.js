@@ -12,11 +12,6 @@ const items = (state = [], action) => {
                     name: action.name
                 }
             ];
-        case types.DELETE_ITEM:
-            return [
-                ...state.slice(0, action.i),
-                ...state.slice(action.i + 1)
-            ];
         case types.RECEIVE_NO_ITEMS:
         default:
             return state;

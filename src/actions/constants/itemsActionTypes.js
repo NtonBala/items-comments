@@ -9,8 +9,3 @@ export const RECEIVE_NO_ITEMS = 'RECEIVE_NO_ITEMS';
 export const SAVE_ITEM = 'SAVE_ITEM';
 //set state
 export const ADD_ITEM = 'ADD_ITEM';
-
-//remove item from localStorage
-export const REMOVE_ITEM = 'REMOVE_ITEM';
-//set state
-export const DELETE_ITEM = 'DELETE_ITEM';

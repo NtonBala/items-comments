@@ -4,7 +4,7 @@ const Form = () => (
     <form>
         <span/>
         <textarea rows={4} cols={50}/>
-        <input type='submit' hidden />
+        <input type='submit' value='Comment'/>
     </form>
 );
 
