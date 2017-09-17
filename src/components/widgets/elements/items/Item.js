@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from '../../../elements/Link';
-import {commentsPath} from '../../../../helpers/routes/index';
+import {commentsPath} from '../../../../helpers/routes/constants';
 
 const Item = ({comments, children}) => (
     <div>

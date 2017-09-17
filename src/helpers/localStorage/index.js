@@ -1,5 +1,5 @@
 import {structure} from './constants';
-import {getState} from '../../store';
+import store from '../../store';
 import _ from 'lodash';
 import update from 'immutability-helper';
 
@@ -13,7 +13,7 @@ const postData = (request) => {
 };
 
 export const postItem = (id, name) => {
-    const state = getState();
+    const state = store.getState();
 
     const request = _.assign({}, state, {
         items: [
@@ -29,7 +29,7 @@ export const postItem = (id, name) => {
 };
 
 export const postComment = (id, text) => {
-    const request = update(getState(), {comments: {$merge: {
+    const request = update(store.getState(), {comments: {$merge: {
         [id]: {$push: [text]}
     }}});
 
