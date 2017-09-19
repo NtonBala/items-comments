@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 
 const Comment = ({children}) => (
     <div>
@@ -6,5 +6,9 @@ const Comment = ({children}) => (
         {children}
     </div>
 );
+
+Comment.propTypes = {
+    children: PropTypes.string
+};
 
 export default Comment;

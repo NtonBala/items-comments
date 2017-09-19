@@ -1,15 +1,15 @@
 import MainLayout from '../components/layout/MainLayout';
 import ItemsPage from '../components/ItemsPage';
-import Comments from '../components/widgets/Comments';
+import CommentsContainer from '../containers/CommentsContainer';
 import {commentsPath} from '../helpers/routes/constants';
 import {fetchItems} from '../actions/itemsActionCreators';
-import {fetchComments} from '../actions/commentsActionCreators';
+import {fetchActiveItem} from '../actions/activeItemActionCreators';
 
 const CommentsRoute = {
     path: commentsPath(),
-    component: Comments,
+    component: CommentsContainer,
     prepareData: (store, query, params) => {
-        store.dispatch(fetchComments(params.item_id));
+        store.dispatch(fetchActiveItem(params.item_id));
     }
 };
 
@@ -20,9 +20,9 @@ const Index = {
         CommentsRoute
     ],
     prepareData: (store, query, params, location) => {
-        if (location.pathname === '/') {
-            store.dispatch(fetchItems());
-        }
+        //if (location.pathname === '/') {
+        store.dispatch(fetchItems());
+        //}
     }
 };
 

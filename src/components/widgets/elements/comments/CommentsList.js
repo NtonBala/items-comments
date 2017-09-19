@@ -1,18 +1,21 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import Comment from './Comment';
+import _ from 'lodash';
 
-const CommentsList = () => (
+const CommentsList = ({comments}) => (
     <ul>
-        <li>
-            <Comment>Lorem ipsum dolor sit amet, consectetur...</Comment>
-        </li>
-        <li>
-            <Comment>Cras a scelerisque ex, vel tempus dui.</Comment>
-        </li>
-        <li>
-            <Comment>Phasellus in neque placerat velit tincidunt...</Comment>
-        </li>
+        {
+            _.map(comments, (comment, i) => (
+                <li key={i}>
+                    <Comment>{comment}</Comment>
+                </li>
+            ))
+        }
     </ul>
 );
+
+CommentsList.propTypes = {
+    comments: PropTypes.arrayOf(PropTypes.string)
+};
 
 export default CommentsList;

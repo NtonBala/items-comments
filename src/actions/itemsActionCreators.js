@@ -1,5 +1,5 @@
-import * as types from './constants/itemsActionTypes';
-import {fetchData, postItem} from '../helpers/localStorage/index';
+import * as types from './constants/actionTypes';
+import {getItemsData, postItemData} from '../helpers/localStorage/index';
 
 //GET ITEMS DATA FROM LOCAL STORAGE API
 const receiveItems = (response) => ({
@@ -13,9 +13,9 @@ const receiveNoItems = () => ({
 
 export const fetchItems = () => (
     (dispatch) => {
-        const response = fetchData();
+        const response = getItemsData();
         if (response) {
-            dispatch(receiveItems(response.items));
+            dispatch(receiveItems(response));
         } else {
             dispatch(receiveNoItems());
         }
@@ -32,7 +32,7 @@ const addItem = (id, name) => ({
 export const saveItem = (itemsCount, name) => (
     (dispatch) => {
         const id = `${itemsCount + 1}`;
-        postItem(id, name);
+        postItemData(id, name);
 
         dispatch(addItem(id, name));
     }

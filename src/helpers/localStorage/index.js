@@ -1,37 +1,60 @@
 import {structure} from './constants';
-import store from '../../store';
 import _ from 'lodash';
-import update from 'immutability-helper';
 
-export const fetchData = () => {
+//interaction with Local Storage
+const readData = () => {
     const response = localStorage.getItem(structure);
     return response ? JSON.parse(response) : false;
 };
 
-const postData = (request) => {
+const writeData = (request) => {
     localStorage.setItem(structure, JSON.stringify(request));
 };
 
-export const postItem = (id, name) => {
-    const state = store.getState();
-
-    const request = _.assign({}, state, {
-        items: [
-            ...state.items,
-            {
-                id,
-                name
-            }
-        ]
-    });
-
-    postData(request);
+//handling items
+export const getItemsData = () => {
+    const items = readData();
+    if (items) {
+        return _.map(items, item => ({
+            id: item.id,
+            name: item.name,
+            comments: item.comments.length
+        }));
+    } else {
+        return false;
+    }
 };
 
-export const postComment = (id, text) => {
-    const request = update(store.getState(), {comments: {$merge: {
-        [id]: {$push: [text]}
-    }}});
+export const postItemData = (id, name) => {
+    const newItem = {
+        id,
+        name,
+        comments: []
+    };
 
-    postData(request);
+    let items = readData();
+    items ? items.push(newItem) : items = [newItem];
+
+    writeData(items);
+};
+
+//handling active item
+export const getItemData = (id) => (
+    _.find(readData(), {id})
+);
+
+export const putItemData = (id, text) => {
+    const edittedItems = _.map(readData(),
+        (item) => (item.id !== id ? item : _.assign(
+            item,
+            {
+                comments: [
+                    ...item.comments,
+                    text
+                ]
+            }
+        ))
+    );
+
+    writeData(edittedItems);
 };

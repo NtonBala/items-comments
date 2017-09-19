@@ -1,4 +1,5 @@
-import * as types from '../actions/constants/itemsActionTypes';
+import * as types from '../actions/constants/actionTypes';
+import _ from 'lodash';
 
 const items = (state = [], action) => {
     switch (action.type) {
@@ -9,9 +10,16 @@ const items = (state = [], action) => {
                 ...state,
                 {
                     id: action.id,
-                    name: action.name
+                    name: action.name,
+                    comments: 0
                 }
             ];
+        case types.ADD_COMMENT:
+            return _.map(state, (item) => (
+                item.id !== action.id ? item : _.assign({}, item, {
+                    comments: item.comments + 1
+                })
+            ));
         case types.RECEIVE_NO_ITEMS:
         default:
             return state;

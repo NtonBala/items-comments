@@ -1,11 +1,25 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import Item from './Item';
+import _ from 'lodash';
 
-const ItemsList = () => (
+const ItemsList = ({items, addItem}) => (
     <ul>
-        <li><Item comments={132}>First item with custom name</Item></li>
-        <li><Item comments={3}>Second item is active</Item></li>
+        {
+            _.map(items, item => (
+                <li key={item.id}>
+                    <Item
+                        item={item}
+                        addItem={addItem}
+                    />
+                </li>
+            ))
+        }
     </ul>
 );
+
+ItemsList.propTypes = {
+    items: PropTypes.arrayOf(PropTypes.shape(Item.propTypes)),
+    addItem: PropTypes.func
+};
 
 export default ItemsList;

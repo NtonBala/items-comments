@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 
-const Title = ({itemNumber}) => (
-    <h1>
-        Comments {itemNumber && `#${itemNumber}`}
-    </h1>
+const Title = ({id}) => (
+    <h2>
+        {`Comment ${id}`}
+    </h2>
 );
+
+Title.propTypes = {
+    id: PropTypes.string
+}
 
 export default Title;

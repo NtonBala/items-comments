@@ -1,9 +1,9 @@
 import React from 'react';
-import Items from './widgets/Items';
+import ItemsContainer from '../containers/ItemsContainer';
 
 const ItemsPage = ({children}) => (
     <div>
-        <Items/>
+        <ItemsContainer/>
         {children}
     </div>
 );
