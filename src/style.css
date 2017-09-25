@@ -1,3 +1,118 @@
-.active-link {
-    background-color: yellowgreen;
+body, html {
+    height: 100%;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    font-size: 100%;
+    margin: 0;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+h1, h2 {
+    font-size: 2.5em;
+    font-weight: normal;
+    color: #565a69;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+#app {
+    height: 100%;
+}
+.main-flex-container {
+    display: flex;
+    height: 100%;
+}
+.header-nav header h1{
+    padding: 20px 20px 60px;
+}
+.header-nav {
+    background-color: #2b2f3e;
+    flex-basis: 20%;
+}
+.header-nav nav a {
+    color: #ffffff;
+    background-color: #ff3c4e;
+    display: block;
+    padding: 15px 20px;
+    font-size: 1.2em;
+}
+.header-nav nav a:hover,
+.header-nav nav a:active {
+    background-color: #ff1a30;
+}
+.content-flex-container {
+    padding: 25px;
+    flex-basis: 80%;
+    display: flex;
+}
+.content-flex-container .flex-item {
+    border-width: 3px 3px 2px 2px;
+    border-style: solid;
+    border-color: #c8c8c8;
+    border-radius: 3px;
+    box-sizing: border-box;
+    flex-basis: 50%;
+    padding: 10px 0;
+    background-color: #ffffff;
+}
+
+.content-flex-container .flex-item:nth-child(1) {
+    margin-right: 7px;
+}
+.content-flex-container .flex-item:nth-child(2) {
+    margin-left: 7px;
+}
+
+.flex-item-title {
+    padding: 0 25px;
+}
+
+.items-form {
+    padding: 15px 25px;
+}
+.items-form input {
+    outline: none;
+    padding: 10px;
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 1.1em;
+    border-radius: 3px;
+}
+
+.items-form input[type='text'] {
+    width: 60%;
+    box-sizing: border-box;
+    margin-right: 15px;
+    border: 2px solid #cccccc;
+}
+
+.items-form input[type='submit'] {
+    padding-left: 45px;
+    padding-right: 45px;
+    background-color: #27ccc0;
+    color: #ffffff;
+    border: 2px solid #27ccc0;
+}
+.items-form input[type='submit']:hover {
+    background-color: #21aba2;
+    border: 2px solid #21aba2;
+    cursor: pointer;
+}
+
+.active-item-link {
+    display: inline-block;
+    border-left: 3px solid #ff2f5a;
+    box-shadow: -3px 0 #ff2f5a;
+}
+.items-list li a {
+    display: inline-block;
+    padding: 15px 10px 15px 25px;
+    color: #2b2f3e;
+    font-weight: bold;
+
 }

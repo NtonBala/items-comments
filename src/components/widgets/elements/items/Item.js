@@ -5,7 +5,7 @@ import '../../../../style.css';
 
 const Item = ({item}) => (
     <div>
-        <Link to={commentsPath(item.id)} activeClassName='active-link'>
+        <Link to={commentsPath(item.id)} activeClassName='active-item-link'>
             {item.name}
         </Link>
         <span>({item.comments})</span>

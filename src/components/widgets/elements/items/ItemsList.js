@@ -3,7 +3,7 @@ import Item from './Item';
 import _ from 'lodash';
 
 const ItemsList = ({items, addItem}) => (
-    <ul>
+    <ul className='items-list'>
         {
             _.map(items, item => (
                 <li key={item.id}>

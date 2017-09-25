@@ -19,6 +19,7 @@ class Form extends React.Component {
             <form
                 ref='itemForm'
                 onSubmit={this.handleAddItem}
+                className='items-form'
             >
                 <input
                     ref='itemName'
