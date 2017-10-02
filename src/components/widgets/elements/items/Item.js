@@ -4,11 +4,11 @@ import {commentsPath} from '../../../../helpers/routes/constants';
 import '../../../../style.css';
 
 const Item = ({item}) => (
-    <div>
+    <div className='items-wrapper'>
         <Link to={commentsPath(item.id)} activeClassName='active-item-link'>
-            {item.name}
+            <span className='item-text'>{item.name}</span>
+            <span className='comments-count'>{item.comments}</span>
         </Link>
-        <span>({item.comments})</span>
         <button>Delete</button>
     </div>
 );
