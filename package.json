@@ -4,7 +4,7 @@
   "description": "React client app, with Redux & React Router. Designed with pure CSS. User can add new items and comment those items. Panels are able to expand endless to the bottom. Structure is saved in Local Storage.",
   "main": "./src/index.js",
   "scripts": {
-    "start": "node ./initializers/server/index.js"
+    "start": "webpack"
   },
   "repository": {
     "type": "git",
