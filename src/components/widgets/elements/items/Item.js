@@ -4,7 +4,7 @@ import {commentsPath} from '../../../../helpers/routes/constants';
 import '../../../../style.css';
 
 const Item = ({item}) => (
-    <div className='items-wrapper'>
+    <div className='items-wrapper clearfix'>
         <Link to={commentsPath(item.id)} activeClassName='active-item-link'>
             <span className='item-text'>{item.name}</span>
             <span className='comments-count'>{item.comments}</span>

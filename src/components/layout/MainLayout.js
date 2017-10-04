@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 import Header from './Header.js';
 
 const MainLayout = ({children}) => (
-    <div className='main-flex-container'>
+    <div className='main-container'>
         <Header/>
         {children}
     </div>

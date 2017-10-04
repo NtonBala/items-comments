@@ -4,7 +4,7 @@ import Form from './elements/items/Form';
 import ItemsList from './elements/items/ItemsList';
 
 const Items = ({items, addItem}) => (
-    <div className='flex-item'>
+    <div className='content-container-item'>
         <Title/>
         <Form addItem={addItem}/>
         <ItemsList

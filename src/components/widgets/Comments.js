@@ -4,7 +4,7 @@ import CommentsList from './elements/comments/CommentsList';
 import Form from './elements/comments/Form';
 
 const Comments = ({activeItem, addComment}) => (
-    <div className='flex-item'>
+    <div className='content-container-item'>
         <Title id={activeItem.id}/>
         <CommentsList comments={activeItem.comments}/>
         <Form addComment={addComment}/>

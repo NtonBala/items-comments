@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 
 const Title = ({id}) => (
-    <h1 className='flex-item-title'>
+    <h1 className='content-item-title'>
         {`Comments #${id}`}
     </h1>
 );

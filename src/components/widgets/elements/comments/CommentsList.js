@@ -3,7 +3,7 @@ import Comment from './Comment';
 import _ from 'lodash';
 
 const CommentsList = ({comments}) => (
-    <ul>
+    <ul className='comments-list'>
         {
             _.map(comments, (comment, i) => (
                 <li key={i}>

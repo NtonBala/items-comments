@@ -17,12 +17,15 @@ class Form extends React.Component {
     render() {
         return (
             <form
+                className='comments-form clearfix'
                 ref='commentForm'
                 onSubmit={this.handleAddComment}
             >
-                <span/>
-                <textarea ref='commentText' rows={4} cols={50}/>
-                <input type='submit' value='Comment'/>
+                <span className='comment-pic'/>
+                <div className='textarea-wrapper'>
+                    <textarea rows={6} ref='commentText'/>
+                    <input type='submit' value='Comment'/>
+                </div>
             </form>
         );
     }
