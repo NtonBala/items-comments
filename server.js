@@ -9,5 +9,5 @@ app.get('/*', function (req, res) {
 });
 
 app.listen(9000, (err) => {
-    err ? console.log(err) : console.log('Running on port 9000');
+    err ? console.log(err) : console.log('Running on localhost port 9000');
 });
