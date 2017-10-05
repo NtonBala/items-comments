@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import Link from '../../../elements/Link';
 import {commentsPath} from '../../../../helpers/routes/constants';
-import '../../../../style.css';
+import '../../../../App.css';
 
 const Item = ({item}) => (
     <div className='items-wrapper clearfix'>
