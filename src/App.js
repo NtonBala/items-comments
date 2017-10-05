@@ -4,7 +4,6 @@ import routes from './routes';
 import store from './store';
 import {Provider} from 'react-redux';
 import {prepareData} from './helpers/routes/index';
-import ReactDOM from 'react-dom';
 
 const historyCallback = location => {
     match(
