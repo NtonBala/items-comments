@@ -2,7 +2,7 @@
 
 Items & Comments is a client side app powered by Empeek. The app allows user to add items and comment them, storing data in browser's
 Local Storage.
-Technologies used: React, ReactDOM, React Router, Redux, Redux Thunk, React Redux and Lodash with QS as helpers.
+Technologies used: Loacal Storage API, React, ReactDOM, React Router, Redux, Redux Thunk, React Redux and Lodash with QS as helpers.
 
 ## Architecture
 
