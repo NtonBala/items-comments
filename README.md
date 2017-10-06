@@ -8,6 +8,7 @@ Technologies used: Loacal Storage API, React, ReactDOM, React Router, Redux, Red
 
 App component is wrapped by Router which routes are described as plain routes. Instead of React components' lifecycle methods React Router & Browser History are used to fetch data when SPA is loaded or user changes routes (see App.js & helpers/routes/index.js). 
 Redux store holds the App's state. There're two High Order Components: Items Container and Comments Container. The state's structure looks like:
+```javascript
 {
     items: [
         {
@@ -24,8 +25,10 @@ Redux store holds the App's state. There're two High Order Components: Items Con
         ]
     }
 }
+```
 
-Data structure is hold in browser's Local Storage and looks like array of object oriented documents:
+Data structure is held in browser's Local Storage and looks like array of object oriented documents:
+```javascript
 [
     {
         id,
@@ -33,6 +36,7 @@ Data structure is hold in browser's Local Storage and looks like array of object
         comments
     }
 ]
+```
 Interaction with Local Storate API is provided by Redux Thunk middleware.
 
 ## Development Environment
