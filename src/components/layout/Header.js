@@ -1,13 +1,19 @@
-import React from 'react';
-import Link from '../elements/Link';
+import React, {PropTypes} from 'react';
 
-const Header = () => (
+const Header = ({resetActiveId}) => (
     <header className='header-nav'>
         <h1>Main</h1>
         <nav>
-            <Link to='/' activeClassName='active-nav'>Overview</Link>
+            <a href='#' onClick={(e) => {
+                e.preventDefault();
+                resetActiveId();
+            }}>Overview</a>
         </nav>
     </header>
 );
+
+Header.propTypes = {
+    resetActiveId: PropTypes.func
+};
 
 export default Header;

@@ -1,10 +1,10 @@
 import {combineReducers} from 'redux';
 import items from './items';
-import activeItem from './activeItem';
+import activeId from './activeId';
 
 const rootReducer = combineReducers({
     items,
-    activeItem
+    activeId
 });
 
 export default rootReducer;

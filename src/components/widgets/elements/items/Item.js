@@ -1,24 +1,36 @@
 import React, {PropTypes} from 'react';
-import Link from '../../../elements/Link';
-import {commentsPath} from '../../../../helpers/routes/constants';
-import '../../../../App.css';
 
-const Item = ({item}) => (
-    <div className='items-wrapper clearfix'>
-        <Link to={commentsPath(item.id)} activeClassName='active-item-link'>
-            <span className='item-text'>{item.name}</span>
-            <span className='comments-count'>{item.comments}</span>
-        </Link>
-        <button>Delete</button>
-    </div>
-);
+class Item extends React.Component {
+    shouldComponentUpdate(nextProps, nextState) {
+        return (this.props.commentsAmount !== nextProps.commentsAmount ||
+            this.props.active !== nextProps.active ||
+            this.state !== nextState);
+    }
+    render() {
+        const {id, name, commentsAmount, active, setActiveItem} = this.props;
+        return (
+            <div className='items-wrapper clearfix'>
+                <a href='#' className={!active ? '' : 'active-item-link'}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        setActiveItem(id);
+                    }}
+                >
+                    <span className='item-text'>{name}</span>
+                    <span className='comments-count'>{commentsAmount}</span>
+                </a>
+                <button>Delete</button>
+            </div>
+        );
+    }
+}
 
 Item.propTypes = {
-    item: PropTypes.shape({
-        id: PropTypes.string,
-        name: PropTypes.string,
-        comments: PropTypes.number
-    })
+    id: PropTypes.string,
+    name: PropTypes.string,
+    commentsAmount: PropTypes.number,
+    active: PropTypes.bool,
+    setActiveItem: PropTypes.func
 };
 
 export default Item;

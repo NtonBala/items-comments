@@ -8,6 +8,7 @@ Technologies used: React, ReactDOM, React Router, Redux, Redux Thunk, React Redu
 
 App component is wrapped by Router which routes are described as plain routes. Redux store holds the App's state.
 There're two High Order Components: Items Container and Comments Container. The state's structure looks like:
+```javascript
 {
     items: [
         {
@@ -24,8 +25,10 @@ There're two High Order Components: Items Container and Comments Container. The 
         ]
     }
 }
+```
 
 Data structure is hold in browser's Local Storage and looks like array of object oriented documents:
+```javascript
 [
     {
         id,
@@ -33,6 +36,7 @@ Data structure is hold in browser's Local Storage and looks like array of object
         comments
     }
 ]
+```
 Interaction with Local Storate API is provided by Redux Thunk middleware.
 
 ## Development Environment

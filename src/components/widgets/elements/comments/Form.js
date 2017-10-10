@@ -8,22 +8,22 @@ class Form extends React.Component {
     }
     handleAddComment(e) {
         e.preventDefault();
-        const text = this.refs.commentText.value;
+        const text = this.textArea.value;
         if (text.trim()) {
             this.props.addComment(text.trim());
         }
-        this.refs.commentForm.reset();
+        this.form.reset();
     }
     render() {
         return (
             <form
                 className='comments-form clearfix'
-                ref='commentForm'
+                ref={(node) => {this.form = node;}}
                 onSubmit={this.handleAddComment}
             >
                 <span className='comment-pic'/>
                 <div className='textarea-wrapper'>
-                    <textarea rows={6} ref='commentText'/>
+                    <textarea rows={6} ref={(node) => {this.textArea = node;}}/>
                     <input type='submit' value='Comment'/>
                 </div>
             </form>

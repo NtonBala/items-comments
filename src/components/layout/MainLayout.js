@@ -1,15 +1,18 @@
-import React, {PropTypes} from 'react';
-import Header from './Header.js';
+import React from 'react';
+import HeaderContainer from '../../containers/HeaderContainer';
+import ItemsContainer from '../../containers/ItemsContainer';
+import CommentsContainer from '../../containers/CommentsContainer';
 
-const MainLayout = ({children}) => (
+const MainLayout = () => (
     <div className='main-container'>
-        <Header/>
-        {children}
+        <HeaderContainer/>
+        <main className='content-container'>
+            <div className='clearfix'>
+                <ItemsContainer/>
+                <CommentsContainer/>
+            </div>
+        </main>
     </div>
 );
-
-MainLayout.propTypes = {
-    children: PropTypes.node
-};
 
 export default MainLayout;

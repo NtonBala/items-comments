@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import Comments from '../components/widgets/Comments';
-import {updateActiveItem} from '../actions/activeItemActionCreators';
+import {updateActiveItem} from '../actions/activeIdActionCreators';
 
 const stateToProps = (state) => ({
     activeItem: state.activeItem

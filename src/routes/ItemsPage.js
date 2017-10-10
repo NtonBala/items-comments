@@ -1,9 +1,9 @@
-import MainLayout from '../components/layout/MainLayout';
+import MainLayout from '../components/Root';
 import ItemsPage from '../components/ItemsPage';
 import CommentsContainer from '../containers/CommentsContainer';
 import {commentsPath} from '../helpers/routes/constants';
 import {fetchItems} from '../actions/itemsActionCreators';
-import {fetchActiveItem} from '../actions/activeItemActionCreators';
+import {fetchActiveItem} from '../actions/activeIdActionCreators';
 
 const CommentsRoute = {
     path: commentsPath(),

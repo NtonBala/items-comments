@@ -8,21 +8,21 @@ class Form extends React.Component {
     }
     handleAddItem(e) {
         e.preventDefault();
-        const name = this.refs.itemName.value;
+        const name = this.input.value;
         if (name.trim()) {
             this.props.addItem(name.trim());
         }
-        this.refs.itemForm.reset();
+        this.form.reset();
     }
     render() {
         return (
             <form
-                ref='itemForm'
+                ref={(node) => {this.form = node;}}
                 onSubmit={this.handleAddItem}
                 className='items-form'
             >
                 <input
-                    ref='itemName'
+                    ref={(node) => {this.input = node;}}
                     type='text'
                     placeholder='Type name here...'
                 />
