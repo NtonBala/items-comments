@@ -1,12 +1,12 @@
 # Empeek Test Task: Items & Comments App
 
-Items & Comments is a client side app powered by Empeek. The app allows user to add items and comment them, storing data in browser's
-Local Storage.
-Technologies used: React, ReactDOM, React Router, Redux, Redux Thunk, React Redux and Lodash with QS as helpers.
+Items & Comments is a client side app powered by Empeek. The app allows user to add items and comment them, storing data
+in browser's Local Storage.
+Technologies used: React, ReactDOM, Redux, Redux Thunk, React Redux and Lodash as helper.
 
 ## Architecture
 
-App component is wrapped by Router which routes are described as plain routes. Redux store holds the App's state.
+Redux store holds the App's state.
 There're two High Order Components: Items Container and Comments Container. The state's structure looks like:
 ```javascript
 {
@@ -14,16 +14,12 @@ There're two High Order Components: Items Container and Comments Container. The 
         {
             id: itemId,
             name: itemName,
-            comments: commentsAmount
+            comments: [
+                'comment text'
+            ]
         }
     ],
-    activeItem: {
-        id,
-        name,
-        comments: [
-            'comment text'
-        ]
-    }
+    activeId: activeItemId
 }
 ```
 
@@ -41,11 +37,10 @@ Interaction with Local Storate API is provided by Redux Thunk middleware.
 
 ## Development Environment
 
-There's only Development Environment available up to now. It is configured using Webpack, Babel and React Hot Loader.
-Webpack Dev Server is used as development server. There're Redux Dev Tools added to control app's state in development
-(is in invisible mode by default, use Ctrl+H to open Dev Tools monitor). ESLint is used as a linter.
+In order to deploy project to GitHub Pages Create React App is used. ESLint is used as a linter and
+Redux Dev Tools Extension is used for monitoring store.
 
 ## Running
 
-Pull master branch and run npm install to install all dependencies.
+Pull gh-pages branch and run npm install to install all dependencies.
 To launch the app run npm start and go to http://localhost:3000/.

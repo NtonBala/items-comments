@@ -1,8 +1,0 @@
-{
-  "name": "Items & Comments",
-  "description": "Empeek test task for Junior React Developer position.",
-  "repository": "https://github.com/NtonBala/items-comments",
-  "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
-  "keywords": ["node", "express", "heroku"],
-  "image": "heroku/nodejs"
-}

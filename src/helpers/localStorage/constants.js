@@ -1,1 +1,1 @@
-export const structure = 'ntonbalaStructure';
+export const structure = 'ntonbalaGH-PagesStructure';

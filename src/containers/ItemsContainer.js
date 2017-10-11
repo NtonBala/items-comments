@@ -2,7 +2,6 @@ import {connect} from 'react-redux';
 import Items from '../components/widgets/Items';
 import {setActiveId} from '../actions/activeIdActionCreators';
 import {saveNewItem} from '../actions/itemsActionCreators';
-import {bindActionCreators} from 'redux';
 import _ from 'lodash';
 
 const stateToProps = (state) => ({
@@ -15,17 +14,17 @@ const stateToProps = (state) => ({
 });
 
 const dispatchToProps = (dispatch) => (
-    bindActionCreators({
-        setActiveId,
-        saveNewItem
-    }, dispatch)
+    {
+        setActiveId: (id) => dispatch(setActiveId(id)),
+        saveNewItem: (itemsCount, name) => dispatch(saveNewItem(itemsCount, name))
+    }
 );
 
-const mergeProps = (stateProps, dispatchToProps) => ({
-    items: stateProps.items,
+const mergeProps = (stateToProps, dispatchToProps) => ({
+    items: stateToProps.items,
     setActiveItem: (id) => dispatchToProps.setActiveId(id),
     addItem: (name) => dispatchToProps.saveNewItem(
-        stateProps.items.length,
+        stateToProps.items.length,
         name
     )
 });

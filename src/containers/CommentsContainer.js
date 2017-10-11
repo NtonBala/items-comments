@@ -1,15 +1,24 @@
 import {connect} from 'react-redux';
 import Comments from '../components/widgets/Comments';
-import {updateActiveItem} from '../actions/activeIdActionCreators';
+import {updateActiveItem} from '../actions/itemsActionCreators';
+import _ from 'lodash';
 
 const stateToProps = (state) => ({
-    activeItem: state.activeItem
+    commentedItem: _.find(state.items, {id: state.activeId})
 });
 
-const actionsToProps = (dispatch, ownProps) => ({
-    addComment: (text) => dispatch(
-        updateActiveItem(ownProps.params.item_id, text)
+const dispatchToProps = (dispatch) => ({
+    addComment: (id, text) => dispatch(
+        updateActiveItem(id, text)
     )
 });
 
-export default connect(stateToProps, actionsToProps)(Comments);
+const mergeProps = (stateToProps, dispatchToProps) => ({
+    commentedItem: stateToProps.commentedItem,
+    addComment: (text) => dispatchToProps.addComment(
+        stateToProps.commentedItem.id,
+        text
+    )
+});
+
+export default connect(stateToProps, dispatchToProps, mergeProps)(Comments);

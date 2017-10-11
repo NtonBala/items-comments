@@ -1,13 +1,13 @@
 import React, {PropTypes} from 'react';
 
-const Title = ({id}) => (
+const Title = ({children}) => (
     <h1 className='content-item-title'>
-        {`Comments #${id}`}
+        {children}
     </h1>
 );
 
 Title.propTypes = {
-    id: PropTypes.string
+    children: PropTypes.node
 };
 
 export default Title;
