@@ -29,6 +29,7 @@ const items = (state = [], action) => {
                 })
             ));
         case RECEIVE_NO_ITEMS:
+            return [];
         default:
             return state;
     }

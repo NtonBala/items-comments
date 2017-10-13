@@ -2,15 +2,16 @@ import React, {PropTypes} from 'react';
 
 class Item extends React.Component {
     shouldComponentUpdate(nextProps, nextState) {
-        return (this.props.commentsAmount !== nextProps.commentsAmount ||
-            this.props.active !== nextProps.active ||
-            this.state !== nextState);
+        return this.props !== nextProps || this.state !== nextState;
     }
     render() {
         const {id, name, commentsAmount, active, setActiveItem} = this.props;
         return (
             <div className='items-wrapper clearfix'>
-                <a href='#' className={!active ? '' : 'active-item-link'}
+                <a
+                    ref={(node) => {this.item = node;}}
+                    href='#'
+                    className={!active ? '' : 'active-item-link'}
                     onClick={(e) => {
                         e.preventDefault();
                         setActiveItem(id);

@@ -7,7 +7,11 @@ Technologies used: React, ReactDOM, Redux, Redux Thunk, React Redux and Lodash a
 ## Architecture
 
 Redux store holds the App's state.
-There're two High Order Components: Items Container and Comments Container. The state's structure looks like:
+There're three High Order Components: Items Container and Comments Container plus Header Container that enables reset of
+active item link. To enable new item displaying as active ADD_ITEM action type is processed in activeId reducer as well.
+The same with making first item display as active (if there's already any data structure in Local Storage) -
+RECEIVE_ITEMS action type is used.
+The state's structure looks like:
 ```javascript
 {
     items: [
@@ -42,5 +46,5 @@ Redux Dev Tools Extension is used for monitoring store.
 
 ## Running
 
-Pull gh-pages branch and run npm install to install all dependencies.
+Pull gh-pages branch and run npm install to install all dependencies. For building the client app run npm run build.
 To launch the app run npm start and go to http://localhost:3000/.

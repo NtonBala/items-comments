@@ -33,7 +33,6 @@ export const saveNewItem = (itemsCount, name) => (
     (dispatch) => {
         const id = `${itemsCount + 1}`;
         postItemData(id, name);
-
         dispatch(addItem(id, name));
     }
 );

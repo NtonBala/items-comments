@@ -16,17 +16,20 @@ const stateToProps = (state) => ({
 const dispatchToProps = (dispatch) => (
     {
         setActiveId: (id) => dispatch(setActiveId(id)),
-        saveNewItem: (itemsCount, name) => dispatch(saveNewItem(itemsCount, name))
+        saveNewItem: (itemsCount, name) => dispatch(saveNewItem(itemsCount, name)),
+        dispatch
     }
 );
 
 const mergeProps = (stateToProps, dispatchToProps) => ({
     items: stateToProps.items,
+    activeId: stateToProps.activeId,
     setActiveItem: (id) => dispatchToProps.setActiveId(id),
     addItem: (name) => dispatchToProps.saveNewItem(
         stateToProps.items.length,
         name
-    )
+    ),
+    dispatch: (action) => dispatchToProps.dispatch(action)
 });
 
 export default connect(stateToProps, dispatchToProps, mergeProps)(Items);

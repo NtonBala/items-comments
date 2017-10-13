@@ -82,7 +82,7 @@ a {
     border-radius: 3px;
     box-sizing: border-box;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    padding: 10px 0;
+    padding: 10px 0 50px 0;
     background-color: #ffffff;
     width: 49%;
     min-height: 30rem;
@@ -266,7 +266,7 @@ comments list */
 }
 /* comments form input */
 .comments-form {
-    padding: 15px 25px;
+    padding: 15px 25px 0 25px;
 }
 .textarea-wrapper {
     margin: 0 0 0 20%;
