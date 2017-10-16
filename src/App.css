@@ -184,11 +184,11 @@ items form input */
     border-bottom: 2px solid #f2f2f2;
 }
 .items-list li a {
-    display: inline-block;
+    display: block;
     padding: 5px 0 5px 0;
     color: #2b2f3e;
     font-weight: bold;
-    word-break: break-all;
+    overflow-wrap: break-word;
     word-wrap: break-word;
 }
 .items-list li a .item-text {
@@ -256,7 +256,7 @@ comments list */
 .comments-list .comments-wrapper p {
     margin: 0 0 0 20%;
     padding: 0;
-    word-break: break-all;
+    overflow-wrap: break-word;
     word-wrap: break-word;
 }
 @media all and (max-width: 500px) {
