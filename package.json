@@ -1,5 +1,5 @@
 {
-  "name": "empeek_test_task_app",
+  "name": "items-comments",
   "version": "1.0.0",
   "description": "React client app, with Redux & React Router. Designed with pure CSS. User can add new items and comment those items. Panels are able to expand endless to the bottom. Structure is saved in Local Storage.",
   "main": "./src/index.js",
@@ -13,9 +13,9 @@
   "author": "NtonBala",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/NtonBala/EpmeekTestTask/issues"
+    "url": "https://github.com/NtonBala/items-comments/issues"
   },
-  "homepage": "https://github.com/NtonBala/EpmeekTestTask#readme",
+  "homepage": "https://github.com/NtonBala/items-comments#readme",
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",
     "babel-cli": "^6.26.0",

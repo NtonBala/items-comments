@@ -20,9 +20,9 @@ const Index = {
         CommentsRoute
     ],
     prepareData: (store, query, params, location) => {
-        //if (location.pathname === '/') {
-        store.dispatch(fetchItems());
-        //}
+        if (location.pathname === '/') {
+            store.dispatch(fetchItems());
+        }
     }
 };
 

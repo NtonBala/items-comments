@@ -6,7 +6,10 @@ Technologies used: React, ReactDOM, React Router, Redux, Redux Thunk, React Redu
 
 ## Architecture
 
-App component is wrapped by Router which routes are described as plain routes. Redux store holds the App's state.
+App component is wrapped by Router which routes are described as plain routes. Redux store holds the App's state. Data
+fetching is provided with the help of router & Browser History: there's historyCallback that gathers with the help of
+helpers/routes/index.js prepareData function all routes prepareDate functions and calls them in order to get data when
+URL is changed.
 There're two High Order Components: Items Container and Comments Container. The state's structure looks like:
 {
     items: [
