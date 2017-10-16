@@ -82,7 +82,7 @@ a {
     border-radius: 3px;
     box-sizing: border-box;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    padding: 10px 0;
+    padding: 10px 0 50px 0;
     background-color: #ffffff;
     width: 49%;
     min-height: 30rem;
@@ -184,11 +184,11 @@ items form input */
     border-bottom: 2px solid #f2f2f2;
 }
 .items-list li a {
-    display: inline-block;
+    display: block;
     padding: 5px 0 5px 0;
     color: #2b2f3e;
     font-weight: bold;
-    word-break: break-all;
+    overflow-wrap: break-word;
     word-wrap: break-word;
 }
 .items-list li a .item-text {
@@ -256,7 +256,7 @@ comments list */
 .comments-list .comments-wrapper p {
     margin: 0 0 0 20%;
     padding: 0;
-    word-break: break-all;
+    overflow-wrap: break-word;
     word-wrap: break-word;
 }
 @media all and (max-width: 500px) {
@@ -266,7 +266,7 @@ comments list */
 }
 /* comments form input */
 .comments-form {
-    padding: 15px 25px;
+    padding: 15px 25px 0 25px;
 }
 .textarea-wrapper {
     margin: 0 0 0 20%;

@@ -7,6 +7,8 @@ Technologies used: React, ReactDOM, React Router, Redux, Redux Thunk, React Redu
 ## Architecture
 
 App component is wrapped by Router which routes are described as plain routes. Redux store holds the App's state.
+Data fetching is provided by historyCallback function in App.js, that with the help of helpers/routes/index.js
+prepareDate function gathers all prepareData functions and calls them if needed when the URL is changed.
 There're two High Order Components: Items Container and Comments Container. The state's structure looks like:
 {
     items: [
@@ -45,3 +47,7 @@ Webpack Dev Server is used as development server. There're Redux Dev Tools added
 
 Pull master branch and run npm install to install all dependencies.
 To launch the app run npm start and go to http://localhost:3000/.
+
+## Website
+
+https://items-comments.herokuapp.com/
