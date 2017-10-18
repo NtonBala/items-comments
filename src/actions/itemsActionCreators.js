@@ -13,14 +13,15 @@ const receiveNoItems = () => ({
     type: types.RECEIVE_NO_ITEMS
 });
 
-export const fetchItems = () => (
+export const fetchItems = (isFirstActive) => (
     (dispatch) => {
         const response = getItemsData();
         if (response) {
             dispatch(receiveItems(response));
 
-            //if there's items already in Local Storage, display first item as active
-            if (response[0]) {
+            /*if current rout is '/' and there's items already in Local
+            Storage, display first item as active*/
+            if (isFirstActive && response[0]) {
                 browserHistory.push(commentsPath(response[0].id));
             }
         } else {
