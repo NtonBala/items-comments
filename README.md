@@ -39,15 +39,25 @@ Interaction with Local Storate API is provided by Redux Thunk middleware.
 
 ## Development Environment
 
-There's only Development Environment available up to now. It is configured using Webpack, Babel and React Hot Loader.
-Webpack Dev Server is used as development server. There're Redux Dev Tools added to control app's state in development
-(is in invisible mode by default, use Ctrl+H to open Dev Tools monitor). ESLint is used as a linter.
+As in this variant react-router & browserHistory are used, dev envitonment is configured with the help of Create
+React App + ESLint attached as a linter.
+
+## Production
+
+Production mode is powered by custom server with compression and morgan middlewares. To run the app in production
 
 ## Running
 
-Pull master branch and run npm install to install all dependencies.
+### In Development Mode
+Pull heroku branch and run npm install to install all dependencies.
 To launch the app run npm start and go to http://localhost:3000/.
+
+### In Production Mode
+
+Pull heroku branch and run npm install to install all dependencies. To build the production build type npm run build.
+To launch the app set NODE_ENV to 'production' by typing set NODE_ENV=production, then type node server.js
+and go to http://localhost:5000/.
 
 ## Website
 
-https://items-comments.herokuapp.com/
+The app is hosted on Heroku: https://items-comments.herokuapp.com/.

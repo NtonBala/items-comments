@@ -4,6 +4,8 @@
   "description": "React client app, with Redux & React Router. Designed with pure CSS. User can add new items and comment those items. Panels are able to expand endless to the bottom. Structure is saved in Local Storage.",
   "main": "./src/index.js",
   "scripts": {
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
     "build": "react-scripts build",
     "start": "react-scripts start"
   },
@@ -13,10 +15,6 @@
   },
   "author": "NtonBala",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/NtonBala/items-comments/issues"
-  },
-  "homepage": "https://github.com/NtonBala/items-comments#readme",
   "devDependencies": {
     "eslint": "^4.9.0",
     "eslint-plugin-destructuring": "^2.1.0",
@@ -25,9 +23,10 @@
     "react-scripts": "0.2.1"
   },
   "dependencies": {
+    "compression": "^1.7.1",
     "express": "^4.16.1",
-    "immutability-helper": "^2.3.1",
     "lodash": "^4.17.4",
+    "morgan": "^1.9.0",
     "qs": "^6.5.1",
     "react": "^15.5.4",
     "react-dom": "^15.6.1",
