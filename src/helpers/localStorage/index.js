@@ -33,7 +33,7 @@ export const postItemData = (id, name) => {
     };
 
     let items = readData();
-    items ? items.push(newItem) : items = [newItem];
+    items = items ? [...items, newItem] : [newItem];
 
     writeData(items);
 };

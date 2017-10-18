@@ -1,5 +1,7 @@
 import * as types from './constants/actionTypes';
 import {getItemsData, postItemData} from '../helpers/localStorage/index';
+import {browserHistory} from 'react-router';
+import {commentsPath} from '../helpers/routes/constants';
 
 //GET ITEMS DATA FROM LOCAL STORAGE API
 const receiveItems = (response) => ({
@@ -16,6 +18,11 @@ export const fetchItems = () => (
         const response = getItemsData();
         if (response) {
             dispatch(receiveItems(response));
+
+            //if there's items already in Local Storage, display first item as active
+            if (response[0]) {
+                browserHistory.push(commentsPath(response[0].id));
+            }
         } else {
             dispatch(receiveNoItems());
         }
@@ -35,5 +42,8 @@ export const saveItem = (itemsCount, name) => (
         postItemData(id, name);
 
         dispatch(addItem(id, name));
+
+        //synchronize items and comments views when adding a new item
+        browserHistory.push(commentsPath(id));
     }
 );
