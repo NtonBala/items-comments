@@ -184,12 +184,14 @@ items form input */
     border-bottom: 2px solid #f2f2f2;
 }
 .items-list li a {
-    display: block;
-    padding: 5px 0 5px 0;
+    display: inline-block;
+    padding: 5px 10px 5px 0;
     color: #2b2f3e;
     font-weight: bold;
     overflow-wrap: break-word;
     word-wrap: break-word;
+    width: 75%;
+    box-sizing: border-box;
 }
 .items-list li a .item-text {
     padding-right: 8px;
@@ -213,6 +215,7 @@ items form input */
     border-radius: 10px;
 }
 .items-list li button {
+    display: inline-block;
     background-color: transparent;
     outline: none;
     border: 2px solid #ff3159;
@@ -221,6 +224,8 @@ items form input */
     font-size: 1em;
     border-radius: 3px;
     float: right;
+    width: 25%;
+    box-sizing: border-box;
 }
 
 /* COMMENTS CONTENT
