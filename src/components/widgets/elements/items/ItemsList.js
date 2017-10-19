@@ -7,7 +7,7 @@ const ItemsList = ({items, addItem}) => (
         {
             _.map(items, item => (
                 <li key={item.id}>
-                    <Item key={item.id}
+                    <Item
                         item={item}
                         addItem={addItem}
                     />

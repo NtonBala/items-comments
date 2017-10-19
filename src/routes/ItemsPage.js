@@ -20,9 +20,10 @@ const Index = {
         CommentsRoute
     ],
     prepareData: (store, query, params, location) => {
-        if (location.pathname === '/') {
-            store.dispatch(fetchItems());
-        }
+        //check if first item should be active
+        const isFirstActive = location.pathname === '/';
+
+        store.dispatch(fetchItems(isFirstActive));
     }
 };
 
