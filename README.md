@@ -7,7 +7,7 @@ Technologies used: Loacal Storage API, React, ReactDOM, React Router, Redux, Red
 
 ## Architecture
 
-App is written with `class` components. App component is wrapped by React-Router. Page data fetching is provided by `prepareData` function that gathers route's data. Business logic is holded in HOCs (`ItemsContainer` & `CommentsContainer`). 
+App is written with `class` components. App component is wrapped by React-Router. Page data fetching is provided by `prepareData` function that gathers route's data. Business logic is held in HOCs (`ItemsContainer` & `CommentsContainer`). 
 
 Redux store holds the App's state. The state's structure looks like:
 ```
