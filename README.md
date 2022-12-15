@@ -48,4 +48,4 @@ Webpack Dev Server is used as development server. There're Redux Dev Tools added
 ## Running
 
 Pull master branch and run npm install to install all dependencies.
-To launch the app run npm start and go to http://localhost:3000/.
+To launch the app run npm start and go to http://localhost:3000.
