@@ -1,36 +1,28 @@
 # Items & Comments
 
-Items & Comments is a client side app powered by Empeek. The app allows user to add items and comment them, storing data in browser's
+Items & Comments is Empeek test task. The app allows user to add items and comment them, storing data in browser's
 Local Storage.
+
 Technologies used: Loacal Storage API, React, ReactDOM, React Router, Redux, Redux Thunk, React Redux and Lodash with QS as helpers.
 
 ## Architecture
 
-<<<<<<< HEAD
-App component is wrapped by Router which routes are described as plain routes. Redux store holds the App's state. Data
-fetching is provided with the help of router & Browser History: there's historyCallback that gathers with the help of
-helpers/routes/index.js prepareData function all routes prepareDate functions and calls them in order to get data when
-URL is changed.
-There're two High Order Components: Items Container and Comments Container. The state's structure looks like:
-=======
-App component is wrapped by Router which routes are described as plain routes. Instead of React components' lifecycle methods React Router & Browser History are used to fetch data when SPA is loaded or user changes routes (see App.js & helpers/routes/index.js). 
-Redux store holds the App's state. There're two High Order Components: Items Container and Comments Container. The state's structure looks like:
-```javascript
->>>>>>> 701f2b49b5e6a69972439922d4ffd5802342c83d
+App is written with `class` components. App component is wrapped by React-Router. Page data fetching is provided by `prepareData` function that gathers route's data. Business logic is holded in HOCs (`ItemsContainer` & `CommentsContainer`). 
+
+Redux store holds the App's state. The state's structure looks like:
+```
 {
     items: [
         {
-            id: itemId,
-            name: itemName,
-            comments: commentsAmount
+            id: number,
+            name: string,
+            comments: number
         }
     ],
     activeItem: {
         id,
         name,
-        comments: [
-            'comment text'
-        ]
+        comments: ['string']
     }
 }
 ```
